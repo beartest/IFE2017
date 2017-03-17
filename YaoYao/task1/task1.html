@@ -137,6 +137,7 @@
 					var strlen = value.length;
 					for(var i = 0; i < strlen; i++) {
 						var code = value.charCodeAt(i);
+						//32 bit
 						if(code >= 0xD800 && code <= 0xDBFF) {
 							len += 2;
 							i++;
@@ -146,7 +147,6 @@
 							len++;
 						}
 					}
-					alert(len);
 					if(len < 4 || len > 16) {
 						return false;
 					} else {
